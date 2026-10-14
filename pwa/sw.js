@@ -2,7 +2,7 @@
 //
 // When you change ANY file (especially a new model), bump CACHE_VERSION,
 // otherwise phones keep using the old cached copy.
-const CACHE_VERSION = "eggcase-v1";
+const CACHE_VERSION = "eggcase-v2";
 
 const ASSETS = [
   "./",

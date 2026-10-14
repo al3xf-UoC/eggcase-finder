@@ -1,0 +1,5 @@
+node_modules/
+tests/fixtures/
+*.pt
+runs/
+.DS_Store

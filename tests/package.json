@@ -1,0 +1,13 @@
+{
+  "name": "eggcase-finder-tests",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "fixtures": "mkdir -p fixtures && cd fixtures && python3 ../make_fixtures.py",
+    "test": "node pipeline.test.mjs"
+  },
+  "dependencies": {
+    "canvas": "^3.2.0",
+    "onnxruntime-web": "1.30.0"
+  }
+}

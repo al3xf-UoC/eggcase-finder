@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Eggcase Finder</title>
+  <meta name="description" content="Find and count mermaid's purses in a beach photo. Works offline; photos never leave your device.">
+  <meta name="theme-color" content="#0f4c5c">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Eggcases">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="top">
+    <img src="icons/icon-192.png" alt="" class="logo" width="40" height="40">
+    <div>
+      <h1>Eggcase Finder</h1>
+      <p class="tag">Find and count mermaid's purses</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="capture" aria-label="Choose a photo">
+      <label class="btn btn-primary" id="camera-btn">
+        <input type="file" accept="image/*" capture="environment" id="camera-input" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 7.2 6H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3.2L15 4H9zm3 4.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z"/></svg>
+        Take a photo
+      </label>
+      <label class="btn btn-secondary">
+        <input type="file" accept="image/*" id="file-input" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5zm2 0v10.6l3.3-3.3a1 1 0 0 1 1.4 0l2.3 2.3 1.3-1.3a1 1 0 0 1 1.4 0L18 15.6V5H6zm9.5 1.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/></svg>
+        Choose from photos
+      </label>
+    </section>
+
+    <p id="status" class="status" role="status" aria-live="polite">Loading the eggcase detector…</p>
+
+    <section id="result" class="result" hidden aria-label="Result">
+      <div class="count-card">
+        <span class="count" id="count">0</span>
+        <span class="count-label" id="count-label">eggcases found</span>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="view" aria-label="Your photo with the eggcases boxed and numbered"></canvas>
+      </div>
+      <p class="hint">Wrong box? Tap it to cross it out. Tap again to bring it back.</p>
+
+      <div class="controls">
+        <label for="conf" class="conf-label">
+          How sure must it be? <output id="conf-out">35%</output>
+        </label>
+        <input type="range" id="conf" min="10" max="90" step="5" value="35">
+        <div class="range-ends"><span>Find more</span><span>Fewer mistakes</span></div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-secondary" id="share-btn" type="button">Save or share picture</button>
+      </div>
+    </section>
+
+    <details class="about">
+      <summary>About this app</summary>
+      <p>Eggcase Finder spots the eggcases of sharks, skates and rays (mermaid's purses)
+        in a photo and counts them. Everything happens on this device: your photos are
+        never uploaded anywhere, and it works without signal once it has loaded.</p>
+      <p>It's a counting helper, not an expert. Check the boxes, and use the
+        <a href="https://www.sharktrust.org/great-eggcase-hunt" target="_blank" rel="noopener">Shark Trust's Great Eggcase Hunt</a>
+        ID guide to name the species and record your finds.</p>
+      <p class="small" id="model-info"></p>
+    </details>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

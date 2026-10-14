@@ -1,0 +1,17 @@
+{
+  "name": "Eggcase Finder",
+  "short_name": "Eggcases",
+  "description": "Find and count mermaid's purses in a beach photo. Works offline; photos stay on your device.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f6efe2",
+  "theme_color": "#0f4c5c",
+  "lang": "en-GB",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
